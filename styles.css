@@ -1,0 +1,33 @@
+.card {
+  max-width: 300px;
+  min-height: 200px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 15px
+}
+.card__title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card__text {
+
+}
+.card-list {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+}
+.checked {
+  background-color: darkgrey;
+  color: white;
+}
+.js-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+#search {
+  width:70%;
+}

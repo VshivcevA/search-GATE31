@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GATE31</title>
+  <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+  <div class="js-results">
+    <input type="text" id="search" placeholder="Поиск по заголовоку">
+    <ul class="card-list"></ul>
+  </div>
+  <template id="template">
+    <li class="card-list__item">
+      <div class="card">
+        <h2 class="card__title"></h2>
+        <p class="card__text"></p>
+        <input type="checkbox" id="checkbox">
+      </div>
+    </li>
+  </template>
+<script src="index.js"></script>
+</body>
+</html>
