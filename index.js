@@ -1,15 +1,13 @@
 const template = document.querySelector('#template')
   .content.querySelector('.card-list__item')
 const cardList = document.querySelector('.card-list')
+const input = document.getElementById('search')
+const searchButton = document.getElementById('search-button')
 
 window.addEventListener('DOMContentLoaded', () => {
   fetch('https://jsonplaceholder.typicode.com/posts/?_start=0&_limit=7')
     .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error(response.statusText);
-      }
+      return response.json();
     })
     .then((dataArray) => {
       search(dataArray)
@@ -29,12 +27,11 @@ const getCheckbox = (item) => {
 }
 
 const search = (dataArray) => {
+  input.value = ''
   renderList(dataArray,cardList)
-
   function filter(val,dataArray){
     return dataArray.filter(data=>(~data.title.indexOf(val)))
   };
-
   function renderList(dataArray,cardList){
     cardList.innerHTML='';
     dataArray.forEach(data => {
@@ -45,6 +42,11 @@ const search = (dataArray) => {
       cardList.appendChild(item)
     })
   }
-  document.getElementById('search')
-    .addEventListener('input',e=>renderList(filter(e.target.value,dataArray),cardList))
+
+  searchButton.addEventListener('click', () => {
+    renderList(filter(input.value, dataArray),cardList)
+    location.href = '#search/' + input.value
+    input.value = '';
+  })
+
 }
