@@ -28,10 +28,6 @@ const getCheckbox = (item) => {
 
 const search = (dataArray) => {
   input.value = ''
-  renderList(dataArray,cardList)
-  function filter(val,dataArray){
-    return dataArray.filter(data=>(~data.title.indexOf(val)))
-  };
   function renderList(dataArray,cardList){
     cardList.innerHTML='';
     dataArray.forEach(data => {
@@ -42,11 +38,15 @@ const search = (dataArray) => {
       cardList.appendChild(item)
     })
   }
+  renderList(dataArray,cardList)
+
+  function filter(val,dataArray){
+    return dataArray.filter(data=>(~data.title.indexOf(val)))
+  }
 
   searchButton.addEventListener('click', () => {
     renderList(filter(input.value, dataArray),cardList)
     location.href = '#search/' + input.value
     input.value = '';
   })
-
 }

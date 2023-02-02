@@ -1,9 +1,14 @@
+.body {
+  background-color: white;
+}
 .card {
   max-width: 300px;
   min-height: 200px;
   border: 1px solid #ccc;
   padding: 15px;
-  margin: 15px
+  margin: 15px;
+  background-color: darkgrey;
+  border-radius: 13px;
 }
 .card__title {
   white-space: nowrap;
