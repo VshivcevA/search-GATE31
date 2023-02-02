@@ -1,5 +1,6 @@
 .body {
   background-color: white;
+
 }
 .card {
   max-width: 300px;
@@ -19,18 +20,21 @@
 
 }
 .card-list {
+  padding: 0;
   display: flex;
   list-style: none;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .checked {
-  background-color: darkgrey;
+  background-color: grey;
   color: white;
 }
 .js-results {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin-top: 30px;
 }
 #search {

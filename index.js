@@ -5,7 +5,7 @@ const input = document.getElementById('search')
 const searchButton = document.getElementById('search-button')
 
 window.addEventListener('DOMContentLoaded', () => {
-  fetch('https://jsonplaceholder.typicode.com/posts/?_start=0&_limit=7')
+  fetch('https://jsonplaceholder.typicode.com/posts/?_start=0&_limit=20')
     .then((response) => {
       return response.json();
     })
