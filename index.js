@@ -14,7 +14,7 @@ const searchButton = document.getElementById("search-button");
 window.addEventListener("DOMContentLoaded", () => {
   (async function get() {
     let response = await fetch(
-      "https://jsonplaceholder.typicode.com/posts/?_start=0&_limit=20"
+      "https://jsonplaceholder.typicode.com/posts/?_start=0&_limit=60"
     );
     let data = await response.json();
     search(data);
@@ -50,10 +50,13 @@ const search = (dataArray) => {
   function filter(val, dataArray) {
     return dataArray.filter((data) => ~data.title.indexOf(val));
   }
-
-  searchButton.addEventListener("click", () => {
-    renderList(filter(input.value, dataArray), cardList);
-    location.href = "#search/" + input.value;
-    input.value = "";
+  input.addEventListener("input", (event) => {
+    renderList(filter(event.target.value, dataArray), cardList);
   });
+
+  // searchButton.addEventListener("click", () => {
+  //   renderList(filter(input.value, dataArray), cardList);
+  //   location.href = "#search/" + input.value;
+  //   input.value = "";
+  // });
 };
